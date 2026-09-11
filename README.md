@@ -5,7 +5,7 @@ Hydra team planning for Raid: Shadow Legends.
 ## Documentation
 
 The Docsify site in [docs/index.html](docs/index.html) displays the Hydra team guide as its home page,
-with sidebar navigation and full-text search across the guide and champion roster.
+with sidebar navigation and full-text search across the guide, champion roster, and Faction Wars planning page.
 The raw roster CSV and guide transcript remain at the repository root; a generated roster table is published in docs.
 
 Edit [docs/hydra-teams-2026-09-11.md](docs/hydra-teams-2026-09-11.md) to update the published guide.
@@ -30,6 +30,23 @@ Pass a different CSV path for a later export. The source filename is shown on th
 Role assessments and the mastery-completion rule live in [scripts/build_roster.py](scripts/build_roster.py);
 edit that generator rather than the generated page. Commit the generated Markdown with the other site files.
 Python is needed only to refresh the roster, not to deploy or view the site.
+
+## Faction Wars Planning
+
+[docs/faction-wars-teams.md](docs/faction-wars-teams.md) contains balanced five-champion recommendations for all
+16 factions in the worksheet, with roles, development priorities, substitutions, and coverage gaps. It is maintained
+separately from the CSV conversion so regeneration does not overwrite the recommendations.
+
+[docs/faction-wars.md](docs/faction-wars.md) presents [Raid Factions.csv](Raid%20Factions.csv) as one tier table
+per faction. Champion names, roles, tier placements, blank planning slots, and form labels are preserved as entered.
+The original CSV stays at the repository root. Update it, then regenerate the page:
+
+```sh
+python3 scripts/build_factions.py "Raid Factions.csv"
+```
+
+The converter is [scripts/build_factions.py](scripts/build_factions.py). Commit the generated Markdown to publish updates;
+no conversion or Python runtime is needed on GitHub Pages.
 
 ## Local Preview
 

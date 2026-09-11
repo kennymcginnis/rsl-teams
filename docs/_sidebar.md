@@ -1,2 +1,3 @@
 - [Hydra Team Plan](/)
 - [Champion Roster](champions-2026-09-11.md)
+- [Faction Wars Teams](faction-wars-teams.md)
