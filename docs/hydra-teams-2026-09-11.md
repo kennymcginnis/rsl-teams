@@ -1,8 +1,8 @@
 # Hydra Teams and Investment Plan
 
-Based on [your September 11 roster](https://github.com/kennymcginnis/rsl-teams/blob/HEAD/champs%2020260911.csv)
-and [the guide transcript](https://github.com/kennymcginnis/rsl-teams/blob/HEAD/hydra-guide.md). Champion kits
-were checked against the references at the end. These are proposed builds, not simulated or tested damage results.
+Based on [your September 11 roster](https://github.com/kennymcginnis/rsl-teams/blob/HEAD/champs%2020260911.csv) and
+[the guide transcript](https://github.com/kennymcginnis/rsl-teams/blob/HEAD/hydra-guide.md). Champion kits were checked
+against the references at the end. These are proposed builds, not simulated or tested damage results.
 
 ## Recommendation and Assumptions
 
@@ -22,35 +22,46 @@ are excellent, but a nominal role is not the same as reliable uptime.
 
 ### Permanent Investment Priorities
 
-| Champion           | Exported development                           | Recommendation                                                                                              |
-| ------------------ | ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Khamir Scald-eye   | Rank 6, level 58; 8 books missing              | Finish level 60. Prioritize A2 speed-buff cooldown, then A3 revive cooldown.                                |
-| Rector Drath       | Rank 5, level 50; 0 books missing; 3-star soul | First new six-star recommendation: healing, conditional Perfect Veil, and revive.                           |
-| Gharol Bloodmaul   | Rank 6, level 60; 10 books missing             | Commit to alternate-form damage; inspect the relevant form's skill upgrades before spending Mythical books. |
-| Wythir the Crowned | Rank 6, level 41; 8 books missing              | Finish leveling, then book support cooldowns when developing Team 3. No new rank-up needed.                 |
-| Mordecai, ID 3936  | Rank 5, level 50; 0 books missing              | Use this booked copy. Trial at 50; promote for Team 3 durability and full mastery/accessory access.         |
-| High Khatun, ID 13 | Rank 5, level 50; 11 books missing             | A2 cooldown first. Trial at 50; six-star later if this slot proves useful.                                  |
+Work down this list with Team 1 first. Book priorities are within their rarity budgets; Mythical books do not compete
+with Legendary or Epic books. Conditional book-only follow-ups are listed under Book Budgets later in this guide.
+
+| Priority | Champion           | Hydra team | 9/11 development              | Books Missing | Masteries Complete | Next investments                                                                                                                        |
+| -------- | ------------------ | ---------- | ----------------------------- | ------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| 1        | Khamir Scald-eye   | Team 1     | Rank 6, level 58              | 8             | No                 | Finish level 60 and remaining masteries. Prioritize A2 speed-buff cooldown, then A3 revive cooldown.                                    |
+| 2        | Rector Drath       | Team 1     | Rank 5, level 50; 3-star soul | Fully booked  | No                 | First new six-star: finish promotion, ascension, and masteries for healing, conditional Perfect Veil, and revive.                       |
+| 3        | Gharol Bloodmaul   | Team 1     | Rank 6, level 60              | 10            | Yes                | Commit to alternate-form damage; inspect that form's upgrades before spending Mythical books. No mastery-completion investment needed.  |
+| 4        | Wythir the Crowned | Team 3     | Rank 6, level 41              | 8             | No                 | After the first two teams are established, finish level 60 and remaining masteries, then support cooldown books. No new rank-up needed. |
+| 5        | Mordecai, ID 3936  | Team 3     | Rank 5, level 50              | Fully booked  | No                 | Trial this booked copy at 50. Once the burn-team slot is established, promote and complete ascension/masteries.                         |
+| 6        | High Khatun, ID 13 | Team 3     | Rank 5, level 50              | 11            | No                 | A2 cooldown first. Trial at 50; promote and finish masteries when committing to her long-term slot. Lowest mastery priority here.       |
+
+**Masteries Complete** uses the same rule as the roster: `UnUsedT3MasScrolls = 950` means Yes; other values mean No.
+This is a planning assumption pending your validation, not verified mastery-tree data. Retain existing partial progress
+rather than resetting it. Five of the 18 default-team champions need mastery completion under this rule.
+
+**No mastery-completion investment currently planned:** Team 1's Visix, Uugo, Gharol, and Artak; all six Team 2
+champions; and Team 3's Lazarius, Gnarlhorn, and Akemtum. They meet the agreed completion rule. Review mastery choices
+for Hydra suitability separately from completion; a complete tree does not automatically need a reset.
 
 Visix, Artak, Uugo, Lyssandra, Wukong, Husk, Royal Guard, Doompriest, Gnarlhorn, and Akemtum are already level 60 and
 show zero books missing. Their current equipped SPD/ACC are **not investment problems**; use the loadout targets below.
 
 `BooksMissing` is the export's total remaining upgrades, not a count of books needed for a particular skill. Books land
-randomly; inspect the relevant skill before spending. The export also shows many champions with zero used mastery
-scrolls and large unused balances. Verify their actual mastery trees: having scrolls available does not mean masteries
-are selected.
+randomly; inspect the relevant skill before spending. Mastery priorities use the agreed 950-counter assumption above,
+consistent with [the roster](champions-2026-09-11.md). Confirm the remaining work in game before spending gems or
+farming scrolls; the counter rule does not tell us exactly which masteries are missing.
 
 ## Team 1: Primary Investment Team
 
 **Khamir Scald-eye (lead), Visix the Unbowed, Uugo, Rector Drath, Gharol Bloodmaul, Artak.**
 
-| Champion          | Roster ID | Assigned roles                                                                                                                          |
-| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Khamir Scald-eye  | 14551     | 20% all-battles SPD aura; Increase SPD and Increase ATK; ally turn-meter boost; full-team revive, defensive buffs, and A1 team healing. |
-| Visix the Unbowed | 96        | Primary Provoke, AoE Decrease SPD, Ally Protection. Her one-turn Provoke on a booked three-turn cooldown is not a permanent lock.       |
-| Uugo              | 8808      | AoE Block Buffs and Decrease DEF; healing and Leech support. Her conditional revive is not the team's normal recovery plan.             |
-| Rector Drath      | 12124     | Main healer, single-target revive, conditional Perfect Veil; incidental A1 Decrease ATK.                                                |
-| Gharol Bloodmaul  | 239       | Main direct-damage dealer in alternate form. Do not count her base-form Provoke, cleanse, or healing as ongoing coverage in this build. |
-| Artak             | 37        | AoE HP Burn, burn activation, AoE Decrease ATK; preferred Cursed-set Hex carrier if the gear meets his core stats.                      |
+| Champion          | Assigned roles                                                                                                                          |
+| ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Khamir Scald-eye  | 20% all-battles SPD aura; Increase SPD and Increase ATK; ally turn-meter boost; full-team revive, defensive buffs, and A1 team healing. |
+| Visix the Unbowed | Primary Provoke, AoE Decrease SPD, Ally Protection. Her one-turn Provoke on a booked three-turn cooldown is not a permanent lock.       |
+| Uugo              | AoE Block Buffs and Decrease DEF; healing and Leech support. Her conditional revive is not the team's normal recovery plan.             |
+| Rector Drath      | Main healer, single-target revive, conditional Perfect Veil; incidental A1 Decrease ATK.                                                |
+| Gharol Bloodmaul  | Main direct-damage dealer in alternate form. Do not count her base-form Provoke, cleanse, or healing as ongoing coverage in this build. |
+| Artak             | AoE HP Burn, burn activation, AoE Decrease ATK; preferred Cursed-set Hex carrier if the gear meets his core stats.                      |
 
 This puts Void control, Block Buffs/Decrease DEF, speed/healing support, and a Perfect Veil healer around Gharol. Khamir
 also supplies Increase ATK for Gharol. Artak adds burn damage and Decrease ATK. Khamir's booked A2 has a three-turn
@@ -101,14 +112,14 @@ Decrease ATK, and removes Husk from Team 2. Gear is reusable; champions used in 
 
 **Lyssandra (lead), Sun Wukong, Husk, Royal Guard, Scyl of the Drakes, Doompriest.**
 
-| Champion           | Roster ID | Assigned roles                                                                                |
-| ------------------ | --------- | --------------------------------------------------------------------------------------------- |
-| Lyssandra          | 70        | 24% all-battles SPD aura, Increase SPD, ally turn-meter boost.                                |
-| Sun Wukong         | 54        | AoE buff steal and Block Buffs, direct damage, self-revive only.                              |
-| Husk               | 30        | Enemy-MAX-HP AoE damage and chance-based A1 Provoke.                                          |
-| Royal Guard        | 5160      | Enemy-MAX-HP AoE damage, random-target Decrease SPD, chance-based single-target Decrease DEF. |
-| Scyl of the Drakes | 65        | Passive team healing, single-target revive, chance-based A1 Decrease SPD.                     |
-| Doompriest         | 12178     | Passive team healing and one random debuff removed per ally per turn; Increase ATK.           |
+| Champion           | Assigned roles                                                                                |
+| ------------------ | --------------------------------------------------------------------------------------------- |
+| Lyssandra          | 24% all-battles SPD aura, Increase SPD, ally turn-meter boost.                                |
+| Sun Wukong         | AoE buff steal and Block Buffs, direct damage, self-revive only.                              |
+| Husk               | Enemy-MAX-HP AoE damage and chance-based A1 Provoke.                                          |
+| Royal Guard        | Enemy-MAX-HP AoE damage, random-target Decrease SPD, chance-based single-target Decrease DEF. |
+| Scyl of the Drakes | Passive team healing, single-target revive, chance-based A1 Decrease SPD.                     |
+| Doompriest         | Passive team healing and one random debuff removed per ally per turn; Increase ATK.           |
 
 All six are level 60, and only Scyl has books missing. Borrow appropriate gear from Team 1 after that run. This team
 offers more direct rescue damage than Team 3, but is less secure than Team 1 against Decay and Wrath. Enemy-MAX-HP
@@ -164,14 +175,14 @@ team Increase SPD, healing, Provoke, or a revive.
 
 **Hierophant Lazarius (lead), Gnarlhorn, Akemtum, Mordecai, Wythir the Crowned, High Khatun.**
 
-| Champion            | Roster ID | Assigned roles                                                                                                                                              |
-| ------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Hierophant Lazarius | 232       | Base form: 25% all-battles SPD aura, AoE Block Buffs/buff-duration reduction, Block Debuffs, Strengthen, ally turn-meter boost, passive single-ally revive. |
-| Gnarlhorn           | 5         | Non-hit Provoke; self Increase DEF and Unkillable.                                                                                                          |
-| Akemtum             | 179       | Native AoE Hex and debuff spreading. Hydra heads are immune to Poison; do not count on his poison damage engine here.                                       |
-| Mordecai            | 3936      | Non-hit AoE HP Burn as the primary damage engine; ally turn-meter boost. Use the booked rank-5 copy.                                                        |
-| Wythir the Crowned  | 13353     | Main healer, full-team cleanse, Increase DEF, Continuous Heals, incidental AoE Leech. No revive.                                                            |
-| High Khatun         | 13        | Team Increase SPD and turn-meter boost; chance-based single-target A1 Decrease SPD. Use the rank-5 copy.                                                    |
+| Champion            | Assigned roles                                                                                                                                              |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hierophant Lazarius | Base form: 25% all-battles SPD aura, AoE Block Buffs/buff-duration reduction, Block Debuffs, Strengthen, ally turn-meter boost, passive single-ally revive. |
+| Gnarlhorn           | Non-hit Provoke; self Increase DEF and Unkillable.                                                                                                          |
+| Akemtum             | Native AoE Hex and debuff spreading. Hydra heads are immune to Poison; do not count on his poison damage engine here.                                       |
+| Mordecai            | Non-hit AoE HP Burn as the primary damage engine; ally turn-meter boost. Use the booked rank-5 copy.                                                        |
+| Wythir the Crowned  | Main healer, full-team cleanse, Increase DEF, Continuous Heals, incidental AoE Leech. No revive.                                                            |
+| High Khatun         | Team Increase SPD and turn-meter boost; chance-based single-target A1 Decrease SPD. Use the rank-5 copy.                                                    |
 
 Lazarius is not your third-best champion: his multiple support roles make a third team possible without taking away Team
 1's control/healing package. Gear him as well as needed for this run; his team number does not assign him inferior gear.
@@ -275,8 +286,8 @@ same difficulty. Do not force Nightmare/Brutal/Hard just because the transcript 
 
 ### First: Team 1
 
-1. Verify/select masteries on the chosen champions before buying anything. Large unused-scroll balances may represent
-   already-earned resources; the export does not prove a completed mastery tree.
+1. Prioritize **Khamir and Rector's remaining masteries**, using the Permanent Investment Priorities table above. Retain
+   the completed trees on Visix, Uugo, Gharol, and Artak; validate remaining work in game before spending resources.
 2. Finish **Khamir to level 60**, then prioritize A2 books and A3 books. A2 falls from five turns to three; A3 falls
    from six to four. A1 books improve damage, not its stated healing percentage.
 3. **Six-star Rector Drath** and finish ascension/masteries. She is already fully booked and has a 3-star soul.
@@ -306,13 +317,17 @@ Gnarlhorn, Akemtum, and Mordecai all show `BooksMissing = 0`.
 
 ### Next: Team 2, Then Team 3
 
-1. Team 2 needs no new six-stars. Test borrowed loadouts and confirm masteries; decide on Scyl's last books based on
-   which skills are actually unfinished. Do not delay testing because of the export's equipment snapshot.
-2. Finish **Wythir from level 41 to 60**. She is already rank 6, so this needs no new rank-up sacrifices.
-3. Verify **Gnarlhorn and Akemtum's masteries/ascension**; both are already level 60 and booked.
-4. Promote **Mordecai, ID 3936**, once a trial demonstrates this burn team is worth developing.
+1. Team 2 needs no new six-stars or mastery-completion investment under the agreed rule. Test borrowed loadouts; decide
+   on Scyl's last books based on which skills are actually unfinished. Do not delay testing because of the export's
+   equipment snapshot.
+2. Finish **Wythir from level 41 to 60 and complete her remaining masteries**. She is already rank 6, so this needs no
+   new rank-up sacrifices.
+3. Verify **Gnarlhorn and Akemtum's ascension**; both are already level 60, booked, and masteried under the agreed rule.
+4. Promote **Mordecai, ID 3936, and complete his masteries** once a trial demonstrates this burn team is worth
+   developing.
 5. Promote **High Khatun, ID 13**, last if the additional durability/accessory access is needed. Her speed buff works at
-   level 50; do not promote her simply to make every portrait level 60.
+   level 50; do not promote her simply to make every portrait level 60. Complete her masteries when committing to this
+   slot, after the higher-priority mastery projects above.
 
 ### Not First for Hydra
 

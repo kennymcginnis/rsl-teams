@@ -7,7 +7,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RARITIES = {1: "Common", 2: "Uncommon", 3: "Rare", 4: "Epic", 5: "Legendary", 6: "Mythical"}
 AFFINITIES = {1: "Magic", 2: "Force", 3: "Spirit", 4: "Void"}
-MASTERY_LIMITS = (100, 600, 950)
 HYDRA_ROLES = {
     "Khamir Scald-eye": "Speed / healing / revive / buffs",
     "Visix the Unbowed": "Provoke / Decrease SPD / Ally Protection",
@@ -39,20 +38,6 @@ HYDRA_ROLES = {
 }
 
 
-def mastery_status(champion):
-    used = tuple(int(champion[f"UsedT{tier}MasScrolls"]) for tier in range(1, 4))
-    unused = tuple(int(champion[f"UnUsedT{tier}MasScrolls"]) for tier in range(1, 4))
-    if all(spent >= limit for spent, limit in zip(used, MASTERY_LIMITS)):
-        return "Full allocation reported"
-    if all(spent + available >= limit for spent, available, limit in zip(used, unused, MASTERY_LIMITS)):
-        return "Full scroll budget; allocation incomplete"
-    if any(used):
-        return "Partial allocation"
-    if any(unused):
-        return "Some scrolls; none allocated"
-    return "No scrolls reported"
-
-
 def cell(value):
     return str(value).replace("|", "\\|").replace("\n", " ")
 
@@ -78,14 +63,11 @@ def build_roster(source):
         "- **Hydra role** is an assessment from the team-planning work, not the official "
         "Attack/Defense/HP/Support champion type. The CSV does not export that type. "
         "Unassessed means no role has been assigned here, not that the champion is unusable.",
-        "- **Books** reports Fully booked when `BooksMissing` is zero; otherwise Incomplete. "
+        "- **Books Missing** shows Fully booked when `BooksMissing` is zero; otherwise the remaining count. "
         "Books spent and skill-by-skill upgrades are not exported and cannot be inferred from this count. "
         "For Mythicals, inspect both forms in game.",
-        "- **Masteries** is inferred only from scroll counters. A full allocation requires "
-        "100 basic, 600 advanced, and 950 divine scrolls reported as used. "
-        "A full scroll budget includes unused scrolls and does not mean a completed mastery tree. "
-        "Verify unusual counters in game; the export does not identify selected masteries or their suitability.",
-        "- **Used / Unused scrolls** lists basic / advanced / divine counters for auditing the mastery status.",
+        "- **Masteries Complete** shows Yes when `UnUsedT3MasScrolls` equals 950, and No otherwise. "
+        "This is the owner's requested assumption, pending in-game validation, not verified mastery-tree data.",
         "- **Empowerment** is the exported empowerment level, separate from rank and awakening.",
         "",
         "## Roster Summary",
@@ -100,8 +82,8 @@ def build_roster(source):
             "",
             f"## {RARITIES[rarity]} Champions",
             "",
-            "| Champion | ID | Rarity | Affinity | Rank | Level | Hydra role | Empowerment | Books | Books missing | Masteries | Used scrolls | Unused scrolls |",
-            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+            "| Champion | ID | Rarity | Affinity | Rank | Level | Hydra role | Empowerment | Books Missing | Masteries Complete |",
+            "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
         ])
         group = sorted(
             (champion for champion in champions if int(champion["Rarity"]) == rarity),
@@ -109,13 +91,11 @@ def build_roster(source):
         )
         for champion in group:
             missing = int(champion["BooksMissing"])
-            used = " / ".join(champion[f"UsedT{tier}MasScrolls"] for tier in range(1, 4))
-            unused = " / ".join(champion[f"UnUsedT{tier}MasScrolls"] for tier in range(1, 4))
             values = [
                 champion["Name"], champion["ID"], RARITIES[rarity], AFFINITIES[int(champion["Affinity"])],
                 champion["Rank"], champion["Level"], HYDRA_ROLES.get(champion["Name"], "Unassessed"),
-                f"+{champion['EmpowerLevel']}", "Fully booked" if missing == 0 else "Incomplete", missing,
-                mastery_status(champion), used, unused,
+                f"+{champion['EmpowerLevel']}", "Fully booked" if missing == 0 else missing,
+                "Yes" if int(champion["UnUsedT3MasScrolls"]) == 950 else "No",
             ]
             lines.append("| " + " | ".join(cell(value) for value in values) + " |")
     return "\n".join(lines) + "\n"
